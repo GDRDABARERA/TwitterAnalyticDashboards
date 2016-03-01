@@ -1,0 +1,16 @@
+<%
+
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT text,Ft,Rt,Owner FROM TweetLatest");
+    var data = [];
+    for (var i in result) {
+     //   data.push("<li><b>"+result[i].text+"</b><br><span>"+" &#10084Ft:"+result[i].Ft+"</span> <span>&nbsp&nbsp&#8625&#8626Rt:"+result[i].Rt+"</span>  <span>&nbsp&nbsp&#9787"+result[i].Owner +"</span></li>");
+      data.push('<li><span>'+result[i].text+'</span><br><span class="ft"><i class="fa fa-heart"></i> '+result[i].Ft+'</span><span class="rt"><i class="fa fa-retweet"></i>'+result[i].Rt+'</span><span>&nbsp&nbsp&#9787<a>'+result[i].Owner+'</a></span></li>');
+
+
+    }
+    db.close();
+    print(stringify(data));
+
+%>
