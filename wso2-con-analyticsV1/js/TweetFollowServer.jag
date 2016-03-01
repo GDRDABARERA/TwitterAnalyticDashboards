@@ -1,0 +1,15 @@
+<%
+    var log = new Log();
+     var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT text,Ft,Rt,Owner FROM FollowCon");
+    var data = [];
+    //log.info(result);
+    for (var i in result) {
+	data.push('<li><div class="avatar"><img src=""><div class="hover"><div class="icon-twitter"></div></div></div><div class="bubble-container"> <div class="bubble"><div class="retweet"><div class="icon-heart"><span>'+result[i].Ft+'</span></div></div><div class="retweet2"><div class="icon-retweet"><span>'+result[i].Rt+'</span></div></div><h3>'+result[i].Owner+'</h3><br/>'+result[i].text+'</div><div class="arrow"></div></div></li>');
+    }
+    //log.info(data);
+    db.close();
+    print(stringify(data));
+
+%>

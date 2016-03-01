@@ -1,0 +1,14 @@
+<% 
+    var Para = request.getContent();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT Mension FROM userprofile where UserID='"+Para["Choose"]+"'");
+
+    var datat = [];
+    var log=new Log(); 
+    datat.push(result[0].Mension);
+    db.close();
+    log.info(db); 
+	print(stringify(datat));  
+%>
+ 

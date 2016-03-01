@@ -1,0 +1,16 @@
+<%
+    var Para = request.getContent();
+    var data = require('../config.json');
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT text FROM userprofile where UserID='"+"Yasara"+"'");
+
+    var datat = [];
+    var log=new Log();
+
+   datat.push(result[0].text);
+
+
+    db.close();
+   log.info("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"+datat);
+	print(stringify(datat));
+%>

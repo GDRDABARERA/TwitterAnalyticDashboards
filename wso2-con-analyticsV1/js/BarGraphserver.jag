@@ -1,0 +1,33 @@
+<% 
+    var Para = request.getContent();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT * FROM userprofile where UserID='"+Para["Choose"]+"'");
+    var Field =new Array();
+	Field[0]="IOT";
+	Field[1]="API";
+	Field[2]="BigData";
+	Field[3]="cloud";
+	Field[4]="WorldDomination";
+	Field[5]="RealAppsHaveDevs";
+	Field[6]="vega";
+	Field[7]="SOA";
+	Field[8]="Governance";
+	Field[9]="conEvent";
+
+    var datat = [];
+    var log=new Log(); 
+    for(var i=0;i<10;i++) {
+	var myJson1 = {};
+	myJson1.x=Field[i];
+ 	myJson1.y=result[0][Field[i]];
+ 	myJson1.c=i;
+	datat.push(myJson1);
+	       
+    }
+   
+    db.close();
+    //log.info(datat); 
+	print(stringify(datat));  
+%>
+ 
