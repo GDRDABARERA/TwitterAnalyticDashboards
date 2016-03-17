@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <meta name="author" content="GDR" />
+      <title>Twitter Analytics</title>
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <!-- Google Fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Monsterrat:400,700|Merriweather:400,300italic,700' rel='stylesheet' type='text/css'>
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="css/animate.css">
+      <!-- Icomoon Icon Fonts-->
+      <link rel="stylesheet" href="css/icomoon.css">
+      <!-- Magnific Popup-->
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <!-- Owl Carousel -->
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <!-- Bootstrap  -->
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <!-- Cards -->
+      <link rel="stylesheet" href="css/cards.css">
+
+      <link rel="shortcut icon" href="libs/theme-wso2_1.0/images/favicon.png" />
+      <!-- Bootstrap CSS -->
+      <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <!-- Font WSO2 CSS -->
+      <link href="libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
+      <!-- Jquery Nanoscroller CSS -->
+      <link href="libs/nanoscroller_0.8.7/nanoscroller.css" rel="stylesheet" type="text/css" />
+      <!-- Jquery pushy CSS -->
+      <link href="libs/pushy_0.9.2/css/pushy.css" rel="stylesheet" type="text/css" />
+      <!-- Theme WSO2 CSS -->
+      <link href="libs/theme-wso2_1.0/css/theme-wso2.css" rel="stylesheet" type="text/css" />
+      <!-- Facebook and Twitter integration -->
+      <meta property="og:title" content=""/>
+      <meta property="og:image" content=""/>
+      <meta property="og:url" content=""/>
+      <meta property="og:site_name" content=""/>
+      <meta property="og:description" content=""/>
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <!-- Google Fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Monsterrat:400,700|Merriweather:400,300italic,700' rel='stylesheet' type='text/css'>
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="css/animate.css">
+      <!-- Icomoon Icon Fonts-->
+      <link rel="stylesheet" href="css/icomoon.css">
+      <!-- Bootstrap  -->
+      <!--<link rel="stylesheet" href="css/bootstrap.css"> -->
+      <!-- Cards -->
+      <link rel="stylesheet" href="css/cards.css">
+      <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet" type="text/css" />
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+      <script src="libs/respond_1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Page Content -->
+      <div class="container">
+         <!-- Page Header -->
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <h1 class="page-header text-center"> Analytics Dashboard</h1>
+               <h2 class="page-sub-header text-center">US Election 2016</h2>
+            </div>
+         </div>
+         <!-- /.row -->
+
+         <!-- Breaker -->
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <img alt="" src="images/break.png" class="img-breaker img-responsive center-block">
+            </div>
+         </div>
+         <!-- /.row -->
+
+         <!-- Projects Row - Live Tweets, News, Fb-->
+         <div class="row">
+
+            <div class="fh5co-cover fh5co-cover-style-2 " data-stellar-background-ratio="0.5" data-next="yes">
+               <div class="fh5co-overlay"></div>
+               <div class="fh5co-cover-text">
+                  <div class="container-fluid">
+                     <h2>LIVE FROM THE WEB</h2>
+                     <div class="row">
+                        <div class="col-xs-6 col-md-6 ">
+                           <div class="fh5co-cover-intro">
+                              <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Google Top News Feeds</h1>
+                              
+                              <ul class="timeline" id="nt-news">
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 ">
+                           <div class="fh5co-cover-intro">
+                              <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Latest Tweets</h1>
+                              <ul class="timeline" id="nt-latest">
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br>
+         <!-- Projects Row - Top 6-->
+         <div class="row">
+            <h2>TRENDING CANDIDATES  <br></h2>
+
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                     <div class="row">
+                        <div class="col-xs-2">
+                           <h3 id="Cname1"></h3>
+                           <h3> <span class="label label-default" id="Ccount1"></span></h3>
+                        </div>
+                        <div class="col-xs-3 col-sm-push-4">
+                           <img class="thumbnail" style="width:150px; height:150px" id="Cimage1"/>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-8">
+                     <div class="single-word-cloud" id="single-word-cloud1"></div>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                     <div class="row">
+                        <div class="col-xs-2">
+                           <h3 id="Cname2"></h3>
+                           <h3> <span class="label label-default" id="Ccount2"></span></h3>
+                        </div>
+                        <div class="col-xs-3 col-sm-push-4">
+                           <img class="thumbnail" style="width:150px; height:150px" id="Cimage2"/>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-8">
+                     <div class="single-word-cloud" id="single-word-cloud2"></div>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                     <div class="row">
+                        <div class="col-xs-2">
+                           <h3 id="Cname3"></h3>
+                           <h3> <span class="label label-default" id="Ccount3"></span></h3>
+                        </div>
+                        <div class="col-xs-3 col-sm-push-4">
+                           <img class="thumbnail" style="width:150px; height:150px" id="Cimage3"/>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-8">
+                     <div class="single-word-cloud" id="single-word-cloud3"></div>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                     <div class="row">
+                        <div class="col-xs-2">
+                           <h3 id="Cname4"></h3>
+                           <h3> <span class="label label-default" id="Ccount4"></span></h3>
+                        </div>
+                        <div class="col-xs-3 col-sm-push-4">
+                           <img class="thumbnail" style="width:150px; height:150px" id="Cimage4"/>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-8">
+                     <div class="single-word-cloud" id="single-word-cloud4"></div>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                     <div class="row">
+                        <div class="col-xs-2">
+                           <h3 id="Cname5"></h3>
+                           <h3> <span class="label label-default" id="Ccount5"></span></h3>
+                        </div>
+                        <div class="col-xs-3 col-sm-push-4">
+                           <img class="thumbnail" style="width:150px; height:150px" id="Cimage5"/>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-8">
+                     <div class="single-word-cloud" id="single-word-cloud5"></div>
+                  </div>
+               </div>
+               <br>
+                <p>Gilmore, Rand, Ben, Kasich are dropped out.</p>
+            </div>
+         </div>
+
+          <br>
+          <!-- Projects Row -->
+
+          <div class="row">
+              <h2>MEDIA SENTIMENT</h2>
+              <p>To identify media sentiment towards politicians</p>
+              <div class="sentiment-graph" id="sentimentGrP"></div>
+             <br>
+              <div>
+                  <p>These rates ara getting from google top news articles which extracted for every 6 hours using standard sentimental analysis method.<br>More Positive value represent that there are more positive sentences of him than negative sentences in google top news articles.
+                  </p>
+              </div>
+          </div>
+          <!-- /.row -->
+          <br>
+          <!-- Projects Row - community graph and top 5 -->
+          <div class="row">
+              <div class="col-md-8 full-height js-full-height">
+                  <h2>THE TWITTER COMMUNITY</h2>
+                  <h6>The Community of #Election2016</h6>
+                  <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <ul class="community-graph-legend">
+                              <li ><i class="fw fw-circle text-color1" id="li-name1">Trump</i> </li>
+                              <li ><i class="fw fw-circle text-color2" id="li-name2"> Bernie</i></li>
+                              <li ><i class="fw fw-circle text-color3" id="li-name3">Clinton</i> </li>
+                              <li ><i class="fw fw-circle text-color4" id="li-name4">Cruz</i> </li>
+                              <li ><i class="fw fw-circle text-color5" id="li-name5">Rubio</i> </li>
+                          </ul>
+                          <div class="trend-graph" id="tgraph"></div>
+                         <br>
+                          <p>A link is created between tweep A and B(A-B), when A retweets B's Tweets. The size of a node is proportional to the total number of retweets the account recieved.  The color of the node is decided on how many times he talks about a  candidate.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 full-height js-full-height">
+                  <div class="fh5co-cover-intro">
+                      <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Top 5 Tweeps</h1>
+                      <div class="graph-container">
+                          <div class="row" style="width:300px">
+                              <div class="col-md-3">
+                                  <img class="preserve" onerror="errorImage(this)" id="img1" style="width:50px; height:50px"/>
+                              </div>
+                              <div class="col-md-3" style="width:200px">
+                                  <h6 class="twitter-name" id="Fname1"><a href="#"></a></h6><h6 class="twitter-id" id="ID1"></h6>
+                                  <h6>Total rretweet count : <span class='tweet-count' id="count1"></span></h6>
+                              </div>
+                          </div>
+                          <div class="row" style="width:300px">
+                              <div class="col-md-3">
+                                  <img class="preserve" onerror="errorImage(this)" id="img2" style="width:50px; height:50px"/>
+                              </div>
+                              <div class="col-md-3" style="width:200px">
+                                  <h6 class="twitter-name" id="Fname2"><a href="#"></a></h6><h6 class="twitter-id" id="ID2"></h6>
+                                  <h6>Total retweet count : <span class='tweet-count' id="count2"></span></h6>
+                              </div>
+                          </div>
+                          <div class="row" style="width:300px">
+                              <div class="col-md-3">
+                                  <img class="preserve" onerror="errorImage(this)" id="img3" style="width:50px; height:50px"/>
+                              </div>
+                              <div class="col-md-3" style="width:200px">
+                                  <h6 class="twitter-name" id="Fname3"><a href="#"></a></h6><h6 class="twitter-id" id="ID3"></h6>
+                                  <h6>Total retweet count : <span class='tweet-count' id="count3"></span></h6>
+                              </div>
+                          </div>
+                          <div class="row" style="width:300px">
+                              <div class="col-md-3">
+                                  <img class="preserve" onerror="errorImage(this)" id="img4" style="width:50px; height:50px"/>
+                              </div>
+                              <div class="col-md-3" style="width:200px">
+                                  <h6 class="twitter-name" id="Fname4"><a href="#"></a></h6><h6 class="twitter-id" id="ID4"></h6>
+                                  <h6>Total retweet count : <span class='tweet-count' id="count4"></span></h6>
+                              </div>
+                          </div>
+                          <div class="row" style="width:300px">
+                              <div class="col-md-3">
+                                  <img class="preserve" onerror="errorImage(this)" id="img5" style="width:50px; height:50px"/>
+                              </div>
+                              <div class="col-md-3" style="width:200px">
+                                  <h6 class="twitter-name" id="Fname5"><a href="#"></a></h6><h6 class="twitter-id" id="ID5"></h6>
+                                  <h6>Total retweet count : <span class='tweet-count' id="count5"></span></h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- /.row -->
+          <br>
+          <!--Popular links -->
+          <div class="row">
+              <h2>POPULAR LINKS SHARED ON TWEETS  : HackerNews Algorithm</h2>
+              <div class="">
+                  <h4>Popular links under #Election2016</h4>
+                  <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.9" data-next="yes">
+                      <div class="fh5co-overlay"></div>
+                      <div class="fh5co-cover-text">
+                          <div class="container-fluid">
+                              <div class="row">
+                                  <div class="fh5co-cover-intro">
+                                      <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Latest Tweets</h1>
+                                      <ul class="timeline" id="nt-popularLink">
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <br>
+          <!-- popular tweets-->
+          <div class="row">
+            <h2>POPULAR TWEETS : HackerNews Algorithm</h2>
+            <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes">
+               <div class="fh5co-overlay"></div>
+               <div class="fh5co-cover-text">
+                  <div class="container-fluid">
+                     <div class="row">
+                        <div class="col-xs-6 col-md-6 full-height js-full-height">
+                           <div class="fh5co-cover-intro">
+                              <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Populart Tweets #Election2016</h1>
+                              <h5 class="wow fadeInUp tweet-amount" data-wow-duration="1s" data-wow-delay=".9s"></h5>
+                              <ul class="timeline" id="nt-popularElection">
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 full-height js-full-height">
+                           <div class="fh5co-cover-intro">
+                              <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Popular Tweets #candidate</h1>
+                              <ul class="timeline" id="nt-popular">
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+      <!-- /row -->
+          <br>
+      <!-- Footer -->
+      <footer>
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <p>
+                  WSO2 Twitter Analytics | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved.
+               </p>
+            </div>
+         </div>
+         <!-- /.row -->
+      </footer>
+      </div>
+      <!-- /.container -->
+      <!-- Site Overlay -->
+      <div class="site-overlay">
+         <div class="cancel-btn text-right" id="close_pushy">
+            <i class="fw fw-cancel fw-inverse"></i>
+         </div>
+      </div>
+      <!-- Jquery/Jquery JS -->
+      <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
+      <!-- jQuery Easing -->
+      <script src="js/jquery.easing.1.3.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+      <!-- Jquery Nanoscroller JS -->
+      <script src="libs/nanoscroller_0.8.7/jquery.nanoscroller.min.js"></script>
+      <!-- newsTicker JS -->
+      <script src="libs/newsTicker_1.0.11/jquery.newsTicker.min.js"></script>
+      <!-- background blur JS -->
+      <script src="libs/foggy_1.1.1/jquery.foggy.min.js"></script>
+      <!-- push menu JS -->
+      <script src="libs/pushy_0.9.2/js/pushy.js"></script>
+      <!-- Theme WSO2 JS -->
+      <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
+      <!--d3 library-->
+      <script src="js/d3/d3.min.js"></script>
+      <script src="js/d3/d3.v3.js"></script>
+      <script src="js/d3/graphlib-dot.js"></script>
+      <script src="js/d3/dagre-d3.js"></script>
+      <script src="js/d3.tip.v0.6.3.js"></script>
+      <script src="js/vega.js"></script>
+      <script src="js/VizGrammar.js"></script>
+      <!-- WOW -->
+      <script src="js/wow.min.js"></script>
+      <script>
+         new WOW().init();
+         
+         function errorImage(e){
+         if(e.src != 'images/defautTwitter.png') e.src = 'images/defautTwitter.png';
+         }
+      </script>
+      <!-- sub JS functions -->
+      <script src="js/PopularList.js"></script>
+      <script src="js/communityGraph.js"></script>
+      <script src="js/candidateCloud.js"></script>
+ 
+     <!-- main JS -->
+      <script src="js/main.js"></script>
+   </body>
+</html>
+
